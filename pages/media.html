@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Library - AI Voice Assistant</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .folder-nav {
+            height: calc(100vh - 180px);
+        }
+        .media-grid {
+            height: calc(100vh - 240px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Header Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-xl font-semibold text-gray-900">Media Library</h1>
+                </div>
+                
+                <!-- Search & Filters -->
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search media..." 
+                               class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <select class="form-select rounded-md border-gray-300">
+                        <option>All Dates</option>
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                        <option>Custom Range</option>
+                    </select>
+                    
+                    <select class="form-select rounded-md border-gray-300">
+                        <option>All Types</option>
+                        <option>JPEG</option>
+                        <option>PNG</option>
+                        <option>DICOM</option>
+                    </select>
+                    
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md">
+                        <i class="fas fa-th-large mr-1"></i> Grid View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <div class="flex space-x-6">
+            <!-- Left Panel - Folder Navigation -->
+            <div class="w-1/5">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="folder-nav overflow-y-auto p-4">
+                        <div class="space-y-2">
+                            <!-- Predefined Folders -->
+                            <div class="font-medium text-gray-900 mb-3">Predefined Folders</div>
+                            <a href="#" class="flex items-center space-x-2 text-blue-600 p-2 bg-blue-50 rounded">
+                                <i class="fas fa-folder"></i>
+                                <span>All Files</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-user-injured"></i>
+                                <span>By Patient</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-calendar"></i>
+                                <span>By Date</span>
+                            </a>
+                            
+                            <!-- Custom Folders -->
+                            <div class="font-medium text-gray-900 mt-6 mb-3">Custom Folders</div>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Cardiac Cases</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-brain"></i>
+                                <span>Neurology</span>
+                            </a>
+                            
+                            <!-- Storage Locations -->
+                            <div class="font-medium text-gray-900 mt-6 mb-3">Storage</div>
+                            <a href="#" class="flex items-center justify-between text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-hdd"></i>
+                                    <span>Local Storage</span>
+                                </div>
+                                <span class="text-xs text-gray-500">15GB/20GB</span>
+                            </a>
+                            <a href="#" class="flex items-center justify-between text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-cloud"></i>
+                                    <span>Cloud Storage</span>
+                                </div>
+                                <span class="text-xs text-gray-500">5GB/10GB</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Media Grid -->
+            <div class="w-4/5">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <!-- Upload Section -->
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 mb-6 text-center">
+                        <div class="space-y-2">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400"></i>
+                            <div class="text-gray-600">
+                                Drag and drop files here, or
+                                <button class="text-blue-600 hover:text-blue-700 font-medium">browse</button>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                Supported formats: JPEG, PNG, DICOM
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Media Grid -->
+                    <div class="media-grid overflow-y-auto">
+                        <div class="grid grid-cols-4 gap-4">
+                            <!-- Media Item -->
+                            <div class="group relative">
+                                <img src="https://via.placeholder.com/300" alt="Medical Image" 
+                                     class="w-full h-48 object-cover rounded-lg">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-100 opacity-0 transition-opacity rounded-lg">
+                                    <div class="absolute inset-0 flex items-center justify-center space-x-2">
+                                        <button class="p-2 text-white hover:text-blue-200">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                        <button class="p-2 text-white hover:text-green-200">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button class="p-2 text-white hover:text-red-200">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="text-sm font-medium text-gray-900">X-Ray_001.jpg</div>
+                                    <div class="text-xs text-gray-500">Added Mar 15, 2024</div>
+                                </div>
+                                <div class="flex space-x-1 mt-1">
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">X-Ray</span>
+                                    <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Chest</span>
+                                </div>
+                            </div>
+                            
+                            <!-- More media items would be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Action Bar -->
+    <footer class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Primary Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium">
+                        <i class="fas fa-file-export mr-1"></i> Bulk Export
+                    </button>
+                    <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm font-medium">
+                        <i class="fas fa-trash mr-1"></i> Delete Selected
+                    </button>
+                </div>
+                
+                <!-- Secondary Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                        <i class="fas fa-folder-plus mr-1"></i> New Folder
+                    </button>
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                        <i class="fas fa-sync mr-1"></i> Refresh Library
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Storage Status -->
+    <div class="fixed bottom-16 right-4 bg-white rounded-lg shadow-lg p-4 text-sm">
+        <div class="space-y-2">
+            <div>
+                <div class="flex justify-between text-gray-600 mb-1">
+                    <span>Local Storage</span>
+                    <span>15GB/20GB</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                    <div class="w-3/4 h-full bg-blue-500 rounded-full"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between text-gray-600 mb-1">
+                    <span>Cloud Storage</span>
+                    <span>5GB/10GB</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                    <div class="w-1/2 h-full bg-green-500 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
