@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# Database
+*.db
+*.sqlite3
+
+# Environment Variables
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Media uploads
+uploads/
+media/
+
+# Google Cloud credentials
+*.json
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# System Files
+.DS_Store
+Thumbs.db
