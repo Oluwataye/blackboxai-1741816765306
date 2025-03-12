@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation History - AI Voice Assistant</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .note-list {
+            height: calc(100vh - 180px);
+        }
+        .note-preview {
+            height: calc(100vh - 240px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Header Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-xl font-semibold text-gray-900">Consultation History</h1>
+                </div>
+                
+                <!-- Search & Filters -->
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search notes..." 
+                               class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <select class="form-select rounded-md border-gray-300">
+                        <option>All Dates</option>
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                        <option>Custom Range</option>
+                    </select>
+                    
+                    <select class="form-select rounded-md border-gray-300">
+                        <option>All Patients</option>
+                        <option>John Doe</option>
+                        <option>Jane Smith</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <div class="flex space-x-6">
+            <!-- Left Panel - Note List -->
+            <div class="w-1/3">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="note-list overflow-y-auto p-4">
+                        <!-- Note Item -->
+                        <div class="border-b border-gray-200 pb-4 mb-4 cursor-pointer hover:bg-gray-50 p-2 rounded">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-medium text-gray-900">John Doe</h3>
+                                    <p class="text-sm text-gray-500">Consultation #12345</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm text-gray-500">2 hours ago</span>
+                                    <div class="flex space-x-1 mt-1">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Saved</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 line-clamp-2">
+                                Patient presents with hypertension symptoms. Blood pressure reading shows 140/90 mmHg...
+                            </p>
+                        </div>
+
+                        <!-- Another Note Item -->
+                        <div class="border-b border-gray-200 pb-4 mb-4 cursor-pointer p-2 rounded">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-medium text-gray-900">Jane Smith</h3>
+                                    <p class="text-sm text-gray-500">Consultation #12344</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm text-gray-500">Yesterday</span>
+                                    <div class="flex space-x-1 mt-1">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Exported</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 line-clamp-2">
+                                Follow-up consultation for diabetes management. A1C levels have improved...
+                            </p>
+                        </div>
+                        
+                        <!-- More note items would be listed here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Note Viewer/Editor -->
+            <div class="w-2/3">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <!-- Note Header -->
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-900">Consultation Details</h2>
+                            <div class="flex space-x-4 mt-2 text-sm text-gray-500">
+                                <span><i class="far fa-calendar mr-1"></i> March 15, 2024</span>
+                                <span><i class="far fa-clock mr-1"></i> 10:30 AM</span>
+                                <span><i class="far fa-user mr-1"></i> Dr. Sarah Johnson</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Follow-up</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Cardiology</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Text Editor -->
+                    <div class="note-preview overflow-y-auto border rounded-lg p-4">
+                        <div class="prose max-w-none">
+                            <p>Patient presents with hypertension symptoms. Blood pressure reading shows 140/90 mmHg.</p>
+                            <p>Previous medical history includes type 2 diabetes diagnosed in 2019.</p>
+                            <h4>Current Medications:</h4>
+                            <ul>
+                                <li>Metformin 500mg twice daily</li>
+                                <li>Lisinopril 10mg once daily</li>
+                            </ul>
+                            <h4>Assessment:</h4>
+                            <p>Blood pressure is slightly elevated but controlled with current medication...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Embedded Images -->
+                    <div class="mt-6">
+                        <h3 class="font-medium text-gray-900 mb-3">Attached Images</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="relative group">
+                                <img src="https://via.placeholder.com/150" alt="Medical Image" 
+                                     class="rounded-lg w-full h-24 object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-100 opacity-0 transition-opacity rounded-lg flex items-center justify-center">
+                                    <button class="p-1 text-white hover:text-blue-200">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Action Bar -->
+    <footer class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Primary Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium">
+                        <i class="fas fa-save mr-1"></i> Save Changes
+                    </button>
+                    <button class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 text-sm font-medium">
+                        <i class="fas fa-download mr-1"></i> Export
+                    </button>
+                    <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm font-medium">
+                        <i class="fas fa-trash mr-1"></i> Delete Note
+                    </button>
+                </div>
+                
+                <!-- Secondary Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                        <i class="fas fa-images mr-1"></i> Media Library
+                    </button>
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                        <i class="fas fa-print mr-1"></i> Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
