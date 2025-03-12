@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation - AI Voice Assistant</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .transcription-panel {
+            height: calc(100vh - 240px);
+        }
+        .medical-term {
+            color: #2563eb;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Header Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Patient Info -->
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">John Doe</h2>
+                        <div class="flex space-x-4 text-sm text-gray-500">
+                            <span>ID: 12345</span>
+                            <span>Age: 45</span>
+                            <span>Gender: Male</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Session Timer -->
+                <div class="text-center">
+                    <div class="text-2xl font-mono text-gray-700" id="timer">00:00:00</div>
+                    <div class="text-sm text-gray-500">Session Duration</div>
+                </div>
+                
+                <!-- Quick Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Microphone Status -->
+                    <button class="p-2 rounded-full bg-green-100 text-green-600" id="micToggle">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    
+                    <!-- Language Selection -->
+                    <select class="form-select rounded-md border-gray-300 text-sm">
+                        <option>English → English</option>
+                        <option>English → Yoruba</option>
+                        <option>English → Hausa</option>
+                    </select>
+                    
+                    <!-- Transcription Control -->
+                    <button class="px-3 py-2 rounded-md bg-blue-100 text-blue-600 text-sm">
+                        <i class="fas fa-pause mr-1"></i> Pause
+                    </button>
+                    
+                    <!-- Save & Exit -->
+                    <button class="px-4 py-2 rounded-md bg-gray-800 text-white text-sm hover:bg-gray-700">
+                        <i class="fas fa-save mr-1"></i> Save & Exit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <div class="flex space-x-4">
+            <!-- Left Panel - Live Transcription -->
+            <div class="w-4/5 bg-white rounded-lg shadow-sm p-6">
+                <div class="transcription-panel overflow-y-auto">
+                    <div class="prose max-w-none">
+                        <p class="text-gray-600">
+                            Patient presents with <span class="medical-term">hypertension</span> symptoms. Blood pressure reading shows 140/90 mmHg.
+                        </p>
+                        <p class="text-gray-600 mt-4">
+                            Previous medical history includes <span class="medical-term">type 2 diabetes</span> diagnosed in 2019.
+                        </p>
+                        <!-- More transcribed text would appear here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Voice Commands -->
+            <div class="w-1/5">
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-medium text-gray-900">Voice Commands</h3>
+                        <button class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Commands List -->
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-trash-alt w-5 text-gray-400"></i>
+                            "Delete last line"
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-image w-5 text-gray-400"></i>
+                            "Insert image"
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-undo w-5 text-gray-400"></i>
+                            "Undo last action"
+                        </li>
+                    </ul>
+                    
+                    <!-- Microphone Sensitivity -->
+                    <div class="mt-6">
+                        <div class="flex justify-between text-sm text-gray-600 mb-2">
+                            <span>Mic Sensitivity</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="w-3/4 h-full bg-blue-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image & Media Section -->
+        <div class="mt-6 bg-white rounded-lg shadow-sm p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-medium text-gray-900">Images & Media</h3>
+                <button class="px-4 py-2 rounded-md bg-blue-50 text-blue-600 text-sm hover:bg-blue-100">
+                    <i class="fas fa-plus mr-1"></i> Add Image
+                </button>
+            </div>
+            
+            <!-- Thumbnail Gallery -->
+            <div class="grid grid-cols-6 gap-4">
+                <div class="relative group">
+                    <img src="https://via.placeholder.com/150" alt="Medical Image" class="rounded-lg w-full h-24 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-100 opacity-0 transition-opacity rounded-lg flex items-center justify-center space-x-2">
+                        <button class="p-1 text-white hover:text-blue-200">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="p-1 text-white hover:text-red-200">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- More image thumbnails would be added here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Action Bar -->
+    <footer class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Primary Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium">
+                        <i class="fas fa-save mr-1"></i> Save
+                    </button>
+                    <button class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 text-sm font-medium">
+                        <i class="fas fa-download mr-1"></i> Export
+                    </button>
+                    <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 text-sm font-medium">
+                        <i class="fas fa-images mr-1"></i> Media Library
+                    </button>
+                </div>
+                
+                <!-- Secondary Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                        <i class="fas fa-microphone mr-1"></i> Voice Commands
+                    </button>
+                    <button class="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium">
+                        <i class="fas fa-history mr-1"></i> Version History
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Timer -->
+    <script>
+        function updateTimer() {
+            const timerElement = document.getElementById('timer');
+            let seconds = 0;
+            
+            setInterval(() => {
+                seconds++;
+                const hours = Math.floor(seconds / 3600);
+                const minutes = Math.floor((seconds % 3600) / 60);
+                const secs = seconds % 60;
+                
+                timerElement.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Start timer when page loads
+        updateTimer();
+
+        // Toggle microphone status
+        document.getElementById('micToggle').addEventListener('click', function() {
+            this.classList.toggle('bg-green-100');
+            this.classList.toggle('text-green-600');
+            this.classList.toggle('bg-red-100');
+            this.classList.toggle('text-red-600');
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-microphone');
+            icon.classList.toggle('fa-microphone-slash');
+        });
+    </script>
+</body>
+</html>
