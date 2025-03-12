@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Voice Assistant</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .settings-nav {
+            height: calc(100vh - 180px);
+        }
+        .settings-content {
+            height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Header Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-xl font-semibold text-gray-900">Settings</h1>
+                </div>
+                
+                <!-- Save/Cancel Actions -->
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-gray-200 text-gray-600 rounded-md hover:bg-gray-300 text-sm font-medium">
+                        <i class="fas fa-undo mr-1"></i> Discard Changes
+                    </button>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium">
+                        <i class="fas fa-save mr-1"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <div class="flex space-x-6">
+            <!-- Left Panel - Settings Menu -->
+            <div class="w-1/4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <nav class="settings-nav p-4">
+                        <div class="space-y-1">
+                            <a href="#user-profile" class="flex items-center space-x-2 text-blue-600 p-2 bg-blue-50 rounded">
+                                <i class="fas fa-user-circle"></i>
+                                <span>User Profile</span>
+                            </a>
+                            <a href="#security" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Security & Privacy</span>
+                            </a>
+                            <a href="#device" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-microphone"></i>
+                                <span>Device & Storage</span>
+                            </a>
+                            <a href="#language" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-language"></i>
+                                <span>Language & Translation</span>
+                            </a>
+                            <a href="#voice" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-volume-up"></i>
+                                <span>Voice Commands</span>
+                            </a>
+                            <a href="#help" class="flex items-center space-x-2 text-gray-600 p-2 hover:bg-gray-50 rounded">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help & Support</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Settings Content -->
+            <div class="w-3/4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="settings-content p-6">
+                        <!-- User Profile Section -->
+                        <section id="user-profile" class="mb-12">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">User Profile</h2>
+                            <div class="space-y-6">
+                                <!-- Profile Photo -->
+                                <div class="flex items-center space-x-6">
+                                    <div class="relative">
+                                        <img src="https://via.placeholder.com/100" alt="Profile Photo" 
+                                             class="w-24 h-24 rounded-full object-cover">
+                                        <button class="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+                                            <i class="fas fa-camera"></i>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium text-gray-900">Profile Photo</h3>
+                                        <p class="text-sm text-gray-500">Upload a professional photo for your profile</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Personal Info -->
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                        <input type="text" value="Dr. Sarah Johnson" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Specialty</label>
+                                        <input type="text" value="Cardiologist" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                        <input type="email" value="sarah.johnson@example.com" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                        <input type="tel" value="+1 (555) 123-4567" 
+                                               class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                                    </div>
+                                </div>
+                                
+                                <!-- Digital Signature -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Digital Signature</label>
+                                    <div class="border border-gray-300 rounded-md p-4">
+                                        <img src="https://via.placeholder.com/300x100" alt="Signature" class="mx-auto">
+                                    </div>
+                                    <button class="mt-2 text-sm text-blue-600 hover:text-blue-700">
+                                        Update Signature
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Security & Privacy Section -->
+                        <section id="security" class="mb-12">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Security & Privacy</h2>
+                            <div class="space-y-6">
+                                <!-- Encryption Settings -->
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div>
+                                        <h3 class="font-medium text-gray-900">End-to-End Encryption</h3>
+                                        <p class="text-sm text-gray-500">Enable AES-256 encryption for all data</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer" checked>
+                                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                    </label>
+                                </div>
+                                
+                                <!-- HIPAA Compliance -->
+                                <div class="space-y-4">
+                                    <h3 class="font-medium text-gray-900">HIPAA Compliance Checklist</h3>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" checked class="rounded text-blue-600">
+                                            <span class="text-sm text-gray-700">Data Encryption at Rest</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" checked class="rounded text-blue-600">
+                                            <span class="text-sm text-gray-700">Secure Data Transmission</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" checked class="rounded text-blue-600">
+                                            <span class="text-sm text-gray-700">Access Control Measures</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Auto Logout -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Automatic Logout Timer</h3>
+                                    <select class="form-select rounded-md border-gray-300">
+                                        <option>5 minutes</option>
+                                        <option selected>10 minutes</option>
+                                        <option>15 minutes</option>
+                                        <option>30 minutes</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Device & Storage Section -->
+                        <section id="device" class="mb-12">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Device & Storage</h2>
+                            <div class="space-y-6">
+                                <!-- Microphone Settings -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Default Microphone</h3>
+                                    <select class="form-select rounded-md border-gray-300 w-full">
+                                        <option>Built-in Microphone</option>
+                                        <option selected>External USB Microphone</option>
+                                    </select>
+                                    <button class="mt-2 text-sm text-blue-600 hover:text-blue-700">
+                                        Test Microphone
+                                    </button>
+                                </div>
+                                
+                                <!-- Storage Paths -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Storage Locations</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                            <div class="flex items-center space-x-2">
+                                                <i class="fas fa-folder text-gray-400"></i>
+                                                <span class="text-sm text-gray-700">Local Storage Path</span>
+                                            </div>
+                                            <button class="text-sm text-blue-600 hover:text-blue-700">Change</button>
+                                        </div>
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                            <div class="flex items-center space-x-2">
+                                                <i class="fas fa-cloud text-gray-400"></i>
+                                                <span class="text-sm text-gray-700">Cloud Storage</span>
+                                            </div>
+                                            <button class="text-sm text-blue-600 hover:text-blue-700">Configure</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Language & Translation Section -->
+                        <section id="language" class="mb-12">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Language & Translation</h2>
+                            <div class="space-y-6">
+                                <!-- Primary Language -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Primary Transcription Language</h3>
+                                    <select class="form-select rounded-md border-gray-300 w-full">
+                                        <option selected>English</option>
+                                        <option>Yoruba</option>
+                                        <option>Hausa</option>
+                                        <option>Igbo</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Secondary Languages -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Translation Languages</h3>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" checked class="rounded text-blue-600">
+                                            <span class="text-sm text-gray-700">Yoruba</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" checked class="rounded text-blue-600">
+                                            <span class="text-sm text-gray-700">Hausa</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-blue-600">
+                                            <span class="text-sm text-gray-700">Igbo</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Translation Accuracy -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Translation Accuracy Mode</h3>
+                                    <div class="space-x-4">
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="accuracy" class="text-blue-600">
+                                            <span class="ml-2 text-sm text-gray-700">Standard</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="accuracy" class="text-blue-600" checked>
+                                            <span class="ml-2 text-sm text-gray-700">Medical (Recommended)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Voice Commands Section -->
+                        <section id="voice" class="mb-12">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Voice Commands</h2>
+                            <div class="space-y-6">
+                                <!-- Custom Commands -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-4">Custom Voice Triggers</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center space-x-4">
+                                            <input type="text" value="Save note" placeholder="English command"
+                                                   class="flex-1 px-3 py-2 border border-gray-300 rounded-md">
+                                            <span class="text-gray-500">→</span>
+                                            <input type="text" value="Ṣafẹ́ẹ̀" placeholder="Yoruba equivalent"
+                                                   class="flex-1 px-3 py-2 border border-gray-300 rounded-md">
+                                            <button class="text-gray-400 hover:text-gray-600">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <button class="text-sm text-blue-600 hover:text-blue-700">
+                                            <i class="fas fa-plus mr-1"></i> Add New Command
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sensitivity Settings -->
+                                <div>
+                                    <h3 class="font-medium text-gray-900 mb-2">Background Noise Filtering</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between text-sm text-gray-600">
+                                            <span>Sensitivity</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <input type="range" min="0" max="100" value="75" 
+                                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Help & Support Section -->
+                        <section id="help">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Help & Support</h2>
+                            <div class="space-y-6">
+                                <!-- App Info -->
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Version</span>
+                                            <span class="text-sm font-medium">2.1.0</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">License</span>
+                                            <span class="text-sm font-medium">Professional</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quick Links -->
+                                <div class="space-y-2">
+                                    <a href="#" class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100">
+                                        <span class="text-sm text-gray-700">View Documentation</span>
+                                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100">
+                                        <span class="text-sm text-gray-700">Contact Support</span>
+                                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 text-sm font-medium">
+                        <i class="fas fa-undo mr-1"></i> Restore Defaults
+                    </button>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium">
+                        <i class="fas fa-file-export mr-1"></i> Export Settings
+                    </button>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-green-600"><i class="fas fa-check-circle"></i></span>
+                    <span class="text-sm text-gray-600">All changes saved</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
