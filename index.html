@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice-to-Note Assistant</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-xl font-bold text-gray-800">AI Voice Assistant</h1>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-microphone mr-2"></i>Start Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Grid of Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Consultation Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
+                            <i class="fas fa-microphone text-white text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">New Consultation</h3>
+                            <p class="mt-1 text-sm text-gray-500">Start a new voice consultation session</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="pages/consultation.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            Start Session
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                            <i class="fas fa-history text-white text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Consultation History</h3>
+                            <p class="mt-1 text-sm text-gray-500">View and manage past consultations</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="pages/history.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+                            View History
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Media Library Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-purple-500 rounded-md p-3">
+                            <i class="fas fa-images text-white text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Media Library</h3>
+                            <p class="mt-1 text-sm text-gray-500">Manage your media files and images</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="pages/media.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700">
+                            Open Library
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-gray-500 rounded-md p-3">
+                            <i class="fas fa-cog text-white text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Settings</h3>
+                            <p class="mt-1 text-sm text-gray-500">Configure application preferences</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="pages/settings.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
+                            Open Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help & Support Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                            <i class="fas fa-question-circle text-white text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Help & Support</h3>
+                            <p class="mt-1 text-sm text-gray-500">Get help and contact support</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="pages/help.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700">
+                            Get Help
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-inner mt-8">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="text-gray-500 text-sm">
+                    © 2024 AI Voice Assistant. All rights reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <span class="text-gray-500 text-sm">
+                        <i class="fas fa-lock"></i> HIPAA Compliant
+                    </span>
+                    <span class="text-gray-500 text-sm">
+                        <i class="fas fa-shield-alt"></i> GDPR Ready
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
